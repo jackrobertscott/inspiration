@@ -1,6 +1,6 @@
 # Inspiration
 
-> A collection of JavaScript/TypeScript design methods to inspire your coding.
+> 🎻 A collection of JavaScript+TypeScript design methods to inspire your coding.
 
 I always ask myself the question **"What is the best way of writing this code?"** and so here is a collection of methods which you can use to help answer that question.
 
@@ -34,7 +34,7 @@ import { createInspiration } from 'inspiration';
 
 ### Classes
 
-Extend a class which already has some functionality.
+1. Extend a class which already has some functionality.
 
 ```ts
 class Inspiration {
@@ -56,7 +56,7 @@ export default class SuperInspiration extends Inspiration {
 }
 ```
 
-Implement an interface which contains no functionality but does have a specific structure.
+2. Implement an interface which contains no functionality but does have a specific structure.
 
 ```ts
 interface Inspiration {
@@ -72,7 +72,7 @@ export default class SuperInspiration implements Inspiration {
 }
 ```
 
-Use a static method to create and return an instance of a class.
+3. Use a static method to create and return an instance of a class.
 
 ```ts
 class Inspiration {
