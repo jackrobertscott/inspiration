@@ -155,6 +155,54 @@ export default createInspiration`
 `;
 ```
 
+## Getters + Setters
+
+1. Use in a class.
+
+```ts
+export default class Inspiration {
+  constructor(
+    private name: string = 'coolName'
+  ) {}
+  get uppercaseName() {
+    return this.name.toUpperCase();
+  }
+  set uppercaseName(updatedName: string) {
+    this.name = updatedName;
+  }
+}
+```
+
+2. Use in a [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy).
+
+```ts
+function createInspirationProxy() {
+  const initialTarget = {
+    name: 'coolName',
+  };
+  const handler = {
+    get(target, property) {
+      if (!target[property]) {
+        throw new Error(`Property "${property}" does not exist on proxy target.`);
+      }
+      return target[property];
+    },
+    set(target, property, value) {
+      target[property] = `${value}Name`;
+    },
+  };
+  return new Proxy(initialTarget, handler);
+}
+```
+
+```ts
+const exampleProxy = createInspirationProxy();
+console.log(exampleProxy.name); // "coolName"
+console.log(exampleProxy.doesNotExist); // throws error
+exampleProxy.name = 'blah';
+console.log(exampleProxy.name); // "blahName"
+```
+
 ## Authors
 
 - Jack Scott [@jacrobsco](https://twitter.com/jacrobsco) - I tweet about coding and startups.
