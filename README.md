@@ -8,25 +8,25 @@ I always ask myself the question **"What is the best way of writing this code?"*
 
 ### Imports
 
-1. Import class as a default export.
+1. Import a class as default.
 
 ```ts
 import Inspo from 'inspiration';
 ```
 
-2. Import class as a sub-module export.
+2. Import a class as a sub-module.
 
 ```ts
 import { Inspo } from 'inspiration';
 ```
 
-3. Import a function as a default export.
+3. Import a function as default.
 
 ```ts
 import createInspiration from 'inspiration';
 ```
 
-4. Import a function as a sub-module export.
+4. Import a function as a sub-module.
 
 ```ts
 import { createInspiration } from 'inspiration';
@@ -34,7 +34,7 @@ import { createInspiration } from 'inspiration';
 
 ### Classes
 
-1. Extend a class which already has some functionality.
+1. Extend a class.
 
 ```ts
 class Inspiration {
@@ -56,7 +56,7 @@ export default class SuperInspiration extends Inspiration {
 }
 ```
 
-2. Implement an interface which contains no functionality but does have a specific structure.
+2. Implement an interface.
 
 ```ts
 interface Inspiration {
@@ -72,7 +72,7 @@ export default class SuperInspiration implements Inspiration {
 }
 ```
 
-3. Use a static method to create and return an instance of a class.
+3. Use a static method to return an instance of a class.
 
 ```ts
 class Inspiration {
