@@ -45,7 +45,9 @@ class Inspiration {
     // code...
   }
 }
+```
 
+```ts
 export default class SuperInspiration extends Inspiration {
   constructor(...args) {
     super(args);
@@ -63,7 +65,9 @@ interface Inspiration {
   time: Date;
   setTime(t: Date);
 }
+```
 
+```ts
 export default class SuperInspiration implements Inspiration {
   time: Date;
   setTime(t: Date) {
@@ -84,10 +88,73 @@ class Inspiration {
     this.name = name;
   }
 }
+```
 
+```ts
 export default Inspiration.create('coolName');
+```
+
+## Functions
+
+1. Create a custom function.
+
+```ts
+export default function MyCoolFunction() {
+  // code...
+}
+```
+
+Or...
+
+```ts
+export default () => {
+  // code...
+}
+```
+
+2. Use a pre-made function.
+
+```ts
+function createInspiration(name: string, time: number, ...args: any[]) {
+  return `${name} ${time}`;
+}
+```
+
+```ts
+export default createInspiration('coolName', 12345);
+```
+
+3. Use a function with a parameter bag.
+
+```ts
+function createInspiration({ name, time, ...args }) {
+  return `${name} ${time}`;
+}
+```
+
+```ts
+export default createInspiration({
+  name: 'coolName',
+  time: 12345,
+});
+```
+
+4. Use a function with [string literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates).
+
+```ts
+function createInspiration(stringParts: string[], ...stringExpressions: any[]) {
+  // code...
+}
+```
+
+```ts
+const color = 'green';
+
+export default createInspiration`
+  backgroundColor: ${color};
+`;
 ```
 
 ## Authors
 
-- Jack Scott [@jacrobsco](https://twitter.com/jacrobsco)
+- Jack Scott [@jacrobsco](https://twitter.com/jacrobsco) - I tweet about coding and startups.
